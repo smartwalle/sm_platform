@@ -11,7 +11,11 @@ class Platform {
               ? PlatformType.macOS
               : (isWindows
                   ? PlatformType.windows
-                  : (isLinux ? PlatformType.linux : (isFuchsia ? PlatformType.fuchsia : PlatformType.unknown))))));
+                  : (isLinux
+                      ? PlatformType.linux
+                      : (isFuchsia
+                          ? PlatformType.fuchsia
+                          : PlatformType.unknown))))));
 
   static bool isWeb = false;
 

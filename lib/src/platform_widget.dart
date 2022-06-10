@@ -2,15 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:sm_platform/src/platform.dart';
 
 class PlatformWidget extends StatelessWidget {
-  final Widget? web;
-  final Widget? android;
-  final Widget? iOS;
-  final Widget? macOS;
-  final Widget? windows;
-  final Widget? fuchsia;
-  final Widget? linux;
-  final Widget child;
-
   PlatformWidget({
     Key? key,
     this.web,
@@ -22,6 +13,15 @@ class PlatformWidget extends StatelessWidget {
     this.linux,
     required this.child,
   }) : super(key: key);
+
+  final Widget? web;
+  final Widget? android;
+  final Widget? iOS;
+  final Widget? macOS;
+  final Widget? windows;
+  final Widget? fuchsia;
+  final Widget? linux;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {

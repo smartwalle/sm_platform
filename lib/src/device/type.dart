@@ -1,7 +1,6 @@
 enum DeviceType {
   unknown,
-  phone,
-  tablet,
+  mobile,
   desktop,
   browser,
 }
