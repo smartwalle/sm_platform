@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:sm_platform/src/device/type.dart';
 
-class Device {
-  static final DeviceType type = DeviceType.browser;
+class KIDevice {
+  static final KIDeviceType type = KIDeviceType.browser;
 
   static final bool isBrowser = kIsWeb;
 

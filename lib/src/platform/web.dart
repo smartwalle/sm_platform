@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:sm_platform/src/platform/type.dart';
 
-class Platform {
-  static final PlatformType type = PlatformType.web;
+class KIPlatform {
+  static final KIPlatformType type = KIPlatformType.web;
 
   static final bool isWeb = kIsWeb;
 

@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:sm_platform/src/device.dart';
+import 'package:sm_platform/src/device/device.dart';
 
-class DeviceWidget extends StatelessWidget {
-  DeviceWidget({
+class KIDeviceWidget extends StatelessWidget {
+  KIDeviceWidget({
     Key? key,
     this.mobile,
     this.desktop,
@@ -10,20 +10,20 @@ class DeviceWidget extends StatelessWidget {
     required this.child,
   }) : super(key: key);
 
-  final Widget? mobile;
-  final Widget? desktop;
-  final Widget? browser;
-  final Widget child;
+  final Widget Function(BuildContext context)? mobile;
+  final Widget Function(BuildContext context)? desktop;
+  final Widget Function(BuildContext context)? browser;
+  final Widget Function(BuildContext context) child;
 
   @override
   Widget build(BuildContext context) {
-    if (Device.isBrowser && this.browser != null) {
-      return this.browser!;
-    } else if (Device.isDesktop && this.desktop != null) {
-      return this.desktop!;
-    } else if (Device.isMobile && this.mobile != null) {
-      return this.mobile!;
+    if (KIDevice.isBrowser && browser != null) {
+      return browser!(context);
+    } else if (KIDevice.isDesktop && desktop != null) {
+      return desktop!(context);
+    } else if (KIDevice.isMobile && mobile != null) {
+      return mobile!(context);
     }
-    return this.child;
+    return child(context);
   }
 }

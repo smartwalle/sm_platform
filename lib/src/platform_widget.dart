@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:sm_platform/src/platform.dart';
+import 'package:sm_platform/src/platform/platform.dart';
 
-class PlatformWidget extends StatelessWidget {
-  PlatformWidget({
+class KIPlatformWidget extends StatelessWidget {
+  KIPlatformWidget({
     Key? key,
     this.web,
     this.android,
@@ -14,32 +14,32 @@ class PlatformWidget extends StatelessWidget {
     required this.child,
   }) : super(key: key);
 
-  final Widget? web;
-  final Widget? android;
-  final Widget? iOS;
-  final Widget? macOS;
-  final Widget? windows;
-  final Widget? fuchsia;
-  final Widget? linux;
-  final Widget child;
+  final Widget Function(BuildContext context)? web;
+  final Widget Function(BuildContext context)? android;
+  final Widget Function(BuildContext context)? iOS;
+  final Widget Function(BuildContext context)? macOS;
+  final Widget Function(BuildContext context)? windows;
+  final Widget Function(BuildContext context)? fuchsia;
+  final Widget Function(BuildContext context)? linux;
+  final Widget Function(BuildContext context) child;
 
   @override
   Widget build(BuildContext context) {
-    if (Platform.isWeb && this.web != null) {
-      return this.web!;
-    } else if (Platform.isAndroid && this.android != null) {
-      return this.android!;
-    } else if (Platform.isIOS && this.iOS != null) {
-      return this.iOS!;
-    } else if (Platform.isMacOS && this.macOS != null) {
-      return this.macOS!;
-    } else if (Platform.isWindows && this.windows != null) {
-      return this.windows!;
-    } else if (Platform.isFuchsia && this.fuchsia != null) {
-      return this.fuchsia!;
-    } else if (Platform.isLinux && this.linux != null) {
-      return this.linux!;
+    if (KIPlatform.isWeb && web != null) {
+      return web!(context);
+    } else if (KIPlatform.isAndroid && android != null) {
+      return android!(context);
+    } else if (KIPlatform.isIOS && iOS != null) {
+      return iOS!(context);
+    } else if (KIPlatform.isMacOS && macOS != null) {
+      return macOS!(context);
+    } else if (KIPlatform.isWindows && windows != null) {
+      return windows!(context);
+    } else if (KIPlatform.isFuchsia && fuchsia != null) {
+      return fuchsia!(context);
+    } else if (KIPlatform.isLinux && linux != null) {
+      return linux!(context);
     }
-    return this.child;
+    return child(context);
   }
 }

@@ -1,4 +1,4 @@
-enum PlatformType {
+enum KIPlatformType {
   unknown,
   iOS,
   android,

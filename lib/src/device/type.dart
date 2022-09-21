@@ -1,4 +1,4 @@
-enum DeviceType {
+enum KIDeviceType {
   unknown,
   mobile,
   desktop,

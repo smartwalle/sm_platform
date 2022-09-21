@@ -2,20 +2,18 @@ import 'dart:io' as io;
 
 import 'package:sm_platform/src/platform/type.dart';
 
-class Platform {
-  static final PlatformType type = (isIOS
-      ? PlatformType.iOS
+class KIPlatform {
+  static final KIPlatformType type = (isIOS
+      ? KIPlatformType.iOS
       : (isAndroid
-          ? PlatformType.android
+          ? KIPlatformType.android
           : (isMacOS
-              ? PlatformType.macOS
+              ? KIPlatformType.macOS
               : (isWindows
-                  ? PlatformType.windows
+                  ? KIPlatformType.windows
                   : (isLinux
-                      ? PlatformType.linux
-                      : (isFuchsia
-                          ? PlatformType.fuchsia
-                          : PlatformType.unknown))))));
+                      ? KIPlatformType.linux
+                      : (isFuchsia ? KIPlatformType.fuchsia : KIPlatformType.unknown))))));
 
   static bool isWeb = false;
 
